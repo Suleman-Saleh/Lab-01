@@ -8,7 +8,7 @@ public class Furniture extends Product{
 
     }
 
-    public Furniture(String name, double price, int stockQuantity, String uniqueIdentifier, double taxation, String material, String dimension) {
+    public Furniture(String name, double price, int stockQuantity, int uniqueIdentifier, double taxation, String material, String dimension) {
         super(name, price, stockQuantity, uniqueIdentifier, taxation);
         this.material = material;
         this.dimension = dimension;

@@ -4,14 +4,14 @@ public class Product {
     private String name;
     private double price;
     private int stockQuantity;
-    private String uniqueIdentifier;
+    private int uniqueIdentifier;
     private double taxation;
 
     public Product() {
 
     }
 
-    public Product(String name, double price, int stockQuantity, String uniqueIdentifier, double taxation) {
+    public Product(String name, double price, int stockQuantity, int uniqueIdentifier, double taxation) {
         this.name = name;
         this.price = price;
         this.stockQuantity = stockQuantity;
@@ -43,11 +43,11 @@ public class Product {
         this.stockQuantity = stockQuantity;
     }
 
-    public String getUniqueIdentifier() {
+    public int getUniqueIdentifier() {
         return uniqueIdentifier;
     }
 
-    public void setUniqueIdentifier(String uniqueIdentifier) {
+    public void setUniqueIdentifier(int uniqueIdentifier) {
         this.uniqueIdentifier = uniqueIdentifier;
     }
 

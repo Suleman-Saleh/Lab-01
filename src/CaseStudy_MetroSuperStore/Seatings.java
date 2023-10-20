@@ -6,7 +6,7 @@ public class Seatings extends Furniture{
     public Seatings(){
 
     }
-    public Seatings(String name, double price, int stockQuantity, String uniqueIdentifier, double taxation, String material, String dimension, int loadCapacity) {
+    public Seatings(String name, double price, int stockQuantity, int uniqueIdentifier, double taxation, String material, String dimension, int loadCapacity) {
         super(name, price, stockQuantity, uniqueIdentifier, taxation, material, dimension);
         this.loadCapacity = loadCapacity;
     }

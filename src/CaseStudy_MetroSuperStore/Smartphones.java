@@ -9,7 +9,7 @@ public class Smartphones extends Electronics{
 
     }
 
-    public Smartphones(String name, double price, int stockQuantity, String uniqueIdentifier, double taxation, String powerConsumption, double warranty, String operatingSystem, int storage, int cameraResolution) {
+    public Smartphones(String name, double price, int stockQuantity, int uniqueIdentifier, double taxation, String powerConsumption, double warranty, String operatingSystem, int storage, int cameraResolution) {
         super(name, price, stockQuantity, uniqueIdentifier, taxation, powerConsumption, warranty);
         this.operatingSystem = operatingSystem;
         this.storage = storage;

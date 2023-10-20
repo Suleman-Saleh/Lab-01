@@ -1,5 +1,5 @@
 package CaseStudy_MetroSuperStore;
-
+import java.util.InputMismatchException;
 import java.util.Scanner;
  public class Main {
         public static void main(String[] args) {
@@ -7,12 +7,12 @@ import java.util.Scanner;
             InventorySystem inventorySystem = new InventorySystem(); // Initialize the InventorySystem
 
             // Create instances of products (Laptops, Smartphones, etc.)
-            Laptops l = new Laptops("HP",100000.0,10,"13579",1.5,"1500MW",4.5,"i7", 10,"15.6 inches");
-            Smartphones p = new Smartphones("Iphone", 1003, 202, "303.3", 4.4, "450 watts", 5.0, "soft", 4, 5);
-            AudioDevices a = new AudioDevices("Audionic", 1004, 203, "304.3", 5.5, "500 watts",2 );
-            Seatings s = new Seatings("Chair", 1000, 20, "305.3", 2.5,"Material", "4",100);
-            Tables t = new Tables("Dinning", 1006, 205, "306.3", 7.7,"glass", "4", "round");
-            Groceries g1=new Groceries("Milk",120,20,"23.5",1.2,new Date(1,12,2023),"Proteins,Fats");
+            Laptops l = new Laptops("HP",100000.0,10,13579,1.5,"1500MW",4.5,"i7", 10,"15.6 inches");
+            Smartphones p = new Smartphones("Iphone", 1003, 202, 303, 4.4, "450 watts", 5.0, "soft", 4, 5);
+            AudioDevices a = new AudioDevices("Audionic", 1004, 203, 304, 5.5, "500 watts",2 );
+            Seatings s = new Seatings("Chair", 1000, 20, 305, 2.5,"Material", "4",100);
+            Tables t = new Tables("Dinning", 1006, 205, 306, 7.7,"glass", "4", "round");
+            Groceries g1=new Groceries("Milk",120,20,23,1.2,new Date(1,12,2023),"Proteins,Fats");
 
             // Add products to the inventory
             inventorySystem.addProduct(l);
@@ -20,6 +20,7 @@ import java.util.Scanner;
             inventorySystem.addProduct(a);
             inventorySystem.addProduct(s);
             inventorySystem.addProduct(t);
+            inventorySystem.addProduct(g1);
 
             int choice;
             do {
@@ -36,20 +37,24 @@ import java.util.Scanner;
 
                 switch (choice) {
                     case 1:
-                        System.out.print("Enter uniqueIdentifier to search: ");
-                        String id = sc.next();
-                        inventorySystem.searchProduct(id);
+                        try {
+                            System.out.print("Enter the uniqueIdentifier to search: ");
+                            int id = sc.nextInt();
+                            inventorySystem.searchProduct(id);
+                        } catch (InputMismatchException e) {
+                            System.out.println("Invalid input. Please enter a valid integer for uniqueIdentifier.");
+                        }
                         break;
                     case 2:
                         System.out.print("Enter uniqueIdentifier to update: ");
-                        String updateId = sc.next();
+                        int updateId = sc.nextInt();
                         System.out.print("Enter new price or stock quantity: ");
                         double newValue = sc.nextDouble();
                         inventorySystem.updatePrice(updateId, newValue);
                         break;
                     case 3:
                         System.out.print("Enter uniqueIdentifier to generate product details: ");
-                        String generateId = sc.next();
+                        int generateId = sc.nextInt();
                         inventorySystem.generateProductDetails(generateId);
                         break;
                     case 4:
@@ -68,7 +73,7 @@ import java.util.Scanner;
                         String name = sc.next();
 
                         System.out.print("Enter unique identifier: ");
-                        String uniqueIdentifier = sc.next();
+                        int uniqueIdentifier = sc.nextInt();
 
                         System.out.print("Enter price: ");
                         double price = sc.nextDouble();
@@ -173,17 +178,19 @@ import java.util.Scanner;
                                 break;
                             default:
                                 System.out.println("Invalid option. Please select a valid product type.");
-                                break;
                         }
                     case 5:
                         System.out.print("Enter the uniqueIdentifier of the product to remove: ");
-                        String removeId = sc.next();
+                        int removeId = sc.nextInt();
                         inventorySystem.removeProduct(removeId);
-                        System.out.println("Product with uniqueIdentifier ");
+                        System.out.println("Product with uniqueIdentifier " +removeId+ "removed");
                         break;
                     case 6:
                         System.out.println("Display Available products");
                         inventorySystem.displayAvailableProducts();
+                        break;
+                    default:
+                        System.out.println("Invalid option. Please select a valid product type.");
                         break;
                 }
 

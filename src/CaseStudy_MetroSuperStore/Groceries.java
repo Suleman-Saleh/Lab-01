@@ -8,7 +8,7 @@ public class Groceries extends Product{
 
     }
 
-    public Groceries(String name, double price, int stockQuantity, String uniqueIdentifier, double taxation, Date expDate, String nutrition) {
+    public Groceries(String name, double price, int stockQuantity, int uniqueIdentifier, double taxation, Date expDate, String nutrition) {
         super(name, price, stockQuantity, uniqueIdentifier, taxation);
         this.expDate = expDate;
         this.nutrition = nutrition;

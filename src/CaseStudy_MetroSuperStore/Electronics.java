@@ -8,7 +8,7 @@ public class Electronics extends Product{
 
     }
 
-    public Electronics(String name, double price, int stockQuantity, String uniqueIdentifier, double taxation, String powerConsumption, double warranty) {
+    public Electronics(String name, double price, int stockQuantity, int uniqueIdentifier, double taxation, String powerConsumption, double warranty) {
         super(name, price, stockQuantity, uniqueIdentifier, taxation);
         this.powerConsumption = powerConsumption;
         this.warranty = warranty;

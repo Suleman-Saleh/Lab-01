@@ -7,7 +7,7 @@ public class Tables extends Furniture{
 
     }
 
-    public Tables(String name, double price, int stockQuantity, String uniqueIdentifier, double taxation, String material, String dimension, String shape) {
+    public Tables(String name, double price, int stockQuantity, int uniqueIdentifier, double taxation, String material, String dimension, String shape) {
         super(name, price, stockQuantity, uniqueIdentifier, taxation, material, dimension);
         this.shape = shape;
     }

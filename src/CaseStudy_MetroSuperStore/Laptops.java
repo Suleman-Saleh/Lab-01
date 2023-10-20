@@ -9,7 +9,7 @@ public class Laptops extends Electronics{
 
     }
 
-    public Laptops(String name, double price, int stockQuantity, String uniqueIdentifier, double taxation, String powerConsumption, double warranty, String processorType, int RAM_size, String screenDimensions) {
+    public Laptops(String name, double price, int stockQuantity, int uniqueIdentifier, double taxation, String powerConsumption, double warranty, String processorType, int RAM_size, String screenDimensions) {
         super(name, price, stockQuantity, uniqueIdentifier, taxation, powerConsumption, warranty);
         this.processorType = processorType;
         this.RAM_size = RAM_size;
